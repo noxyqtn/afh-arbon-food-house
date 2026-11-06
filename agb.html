@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AGB – Allgemeine Geschäftsbedingungen – AFH Arbon Food House. Geschäftsbedingungen für Bestellungen und Restaurantbetrieb." />
+  <title>AGB | AFH Arbon Food House</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body class="bg-[#0a0a0a] text-white font-sans antialiased selection:bg-orange-500 selection:text-white overflow-x-hidden">
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-40 border-b border-white/10 bg-black/50 backdrop-blur-md bg-opacity-80 transition-all duration-300" id="header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <div class="flex-shrink-0">
+          <a href="index.html" class="block">
+            <img src="logo.png" alt="AFH Arbon Food House" class="h-10 lg:h-12 w-auto drop-shadow-[0_0_20px_rgba(255,107,0,0.4)]" loading="lazy">
+          </a>
+        </div>
+        <nav class="hidden md:flex items-center space-x-8" aria-label="Hauptnavigation">
+          <a href="index.html#home" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Start</a>
+          <a href="index.html#about" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Über uns</a>
+          <a href="index.html#menu" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Speisekarte</a>
+          <a href="index.html#reviews" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Bewertungen</a>
+          <a href="index.html#contact" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Kontakt</a>
+        </nav>
+        <div class="hidden md:flex items-center">
+          <a href="https://www.just-eat.ch/speisekarte/arbon-food-house" target="_blank" rel="noopener noreferrer" class="cart-btn group relative inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 rounded-2xl shadow-[0_0_20px_rgba(255,107,0,0.5)] shadow-orange-500/20 all:transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,107,0,0.7)] hover:shadow-orange-500/40 pulse-border cursor-pointer">
+            <svg class="w-6 md:w-7 h-6 md:h-7 text-white group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            <span class="group-hover:block absolute -inset-px bg-gradient-to-r from-orange-400 to-orange-600 rounded-2xl opacity-0 group-hover:opacity-100 blur blur-md transition-opacity duration-300 pointer-events-none"></span>
+            <span class="sr-only">Online bestellen bei Just Eat</span>
+          </a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden bg-black/90 backdrop-blur-md border-b border-white/10">
+      <div class="px-4 py-6 space-y-4">
+        <a href="index.html#home" class="block text-lg font-medium text-gray-300 hover:text-white transition-colors px-3 py-2 rounded-lg hover:bg-white/5" data-close-menu>Start</a>
+        <a href="index.html#about" class="block text-lg font-medium text-gray-300 hover:text-white transition-colors px-3 py-2 rounded-lg hover:bg-white/5" data-close-menu>Über uns</a>
+        <a href="index.html#menu" class="block text-lg font-medium text-gray-300 hover:text-white transition-colors px-3 py-2 rounded-lg hover:bg-white/5" data-close-menu>Speisekarte</a>
+        <a href="index.html#reviews" class="block text-lg font-medium text-gray-300 hover:text-white transition-colors px-3 py-2 rounded-lg hover:bg-white/5" data-close-menu>Bewertungen</a>
+        <a href="index.html#contact" class="block text-lg font-medium text-gray-300 hover:text-white transition-colors px-3 py-2 rounded-lg hover:bg-white/5" data-close-menu>Kontakt</a>
+        <a href="https://www.just-eat.ch/speisekarte/arbon-food-house" target="_blank" rel="noopener noreferrer" class="block w-full text-center text-lg font-bold text-white bg-gradient-to-br from-orange-500 to-orange-700 px-6 py-3 rounded-2xl shadow-lg shadow-orange-500/30 hover:from-orange-400 hover:to-orange-600 transition-all transform hover:scale-[1.02]" data-close-menu>Jetzt online bestellen</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 mb-12">
+    <article class="glass-strong rounded-3xl p-8 md:p-12 border border-white/10">
+      <header class="mb-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-white mb-3 playfair">Allgemeine Geschäftsbedingungen (AGB)</h1>
+        <p class="text-gray-400 text-sm">Stand: November 2026</p>
+      </header>
+
+      <section class="space-y-6 text-sm md:text-base leading-relaxed text-gray-300">
+        <p class="text-white font-semibold mb-4">Die folgenden Allgemeinen Geschäftsbedingungen (nachfolgend «AGB») gelten für alle Bestellungen, Reservierungen und den Besuch im Restaurant AFH Arbon Food House (nachfolgend «Restaurant»), St. Gallerstrasse 16, 9320 Arbon, Schweiz.</p>
+
+        <h2 class="text-xl font-bold text-white playfair mt-8 mb-3">1. Geltungsbereich</h2>
+        <p>Diese AGB gelten für alle Verträge, Bestellungen und Leistungen, die zwischen dem Kunden und dem Restaurant abgeschlossen oder erbracht werden. Sie gelten sowohl für den Verzehr vor Ort (Dine-in) als auch für Abholungen (Takeaway) und Bestellungen über Partnerplattformen (z. B. Just Eat).</p>
+        <p>Abweichende Bedingungen des Kunden werden nicht anerkannt, es sei denn, dem wurde ausdrücklich schriftlich zugestimmt.</p>
+
+        <h2 class="text-xl font-bold text-white playfair mt-8 mb-3">2. Vertragsabschluss</h2>
+        <p>Die Darstellung der Speisekarte und der Preise auf der Website sowie auf Partnerplattformen stellt kein rechtlich bindendes Angebot dar, sondern eine Aufforderung zur Bestellung (invitatio ad offerendum).</p>
+        <p>Mit der Abgabe einer Bestellung gibt der Kunde ein verbindliches Angebot zum Abschluss eines Kaufvertrags ab. Der Vertrag kommt zustande, wenn das Restaurant die Bestellung annimmt (durch schriftliche Bestätigung oder durch Ausgabe/Aushändigung der bestellten Ware).</p>
+
+        <h2 class="text-xl font-bold text-white playfair mt-8 mb-3">3. Preise und Zahlung</h2>
+        <p>Alle angegebenen Preise verstehen sich in Schweizer Franken (CHF) und inklusive der gesetzlichen Mehrwertsteuer.</p>
+        <p>Die Zahlung erfolgt wahlweise per Kreditkarte, Debitkarte, Barzahlung vor Ort oder über die Zahlungsmethode der jeweiligen Bestellplattform.</p>
+        <p>Für Bestellungen über Just Eat gelten die Zahlungsbedingungen von Just Eat.</p>
+
+        <h2 class="text-xl font-bold text-white playfair mt-8 mb-3">4. Bestellung und Lieferung / Abholung</h2>
+        <p>Bestellungen können telefonisch, vor Ort oder über die verlinkte Just-Eat-Speisekarte aufgegeben werden.</p>
+        <p>Abholbestellungen sind innerhalb der angegebenen Abholzeit im Restaurant abzuholen. Bei nicht abgeholten Bestellungen behält sich das Restaurant das Recht vor, die Ware zu entsorgen und den Kaufpreis dennoch in Rechnung zu stellen.</p>
+        <p>Lieferungen erfolgen durch den jeweiligen Lieferdienstpartner (z. B. Just Eat). Das Restaurant übernimmt keine Gewähr für Lieferzeiten, die durch den Lieferdienst bestimmt werden.</p>
+
+        <h2 class="text-xl font-bold text-white playfair mt-8 mb-3">5. Reservierungen (Dine-in)</h2>
+        <p>Reservierungen können telefonisch oder vor Ort vorgenommen werden. Eine Reservierung gilt als bestätigt, sobald das Restaurant diese bestätigt hat.</p>
+        <p>Bei Nichterscheinen ohne Absage mindestens 30 Minuten vor dem reservierten Zeitpunkt behält sich das Restaurant das Recht vor, den Tisch anderweitig zu vergeben und eine Ausfallgebühr in Höhe von CHF 20.– pro reservierter Person zu erheben.</p>
+
+        <h2 class="text-xl font-bold text-white playfair mt-8 mb-3">6. Widerrufsrecht</h2>
+        <p>Bei Verträgen über die Lieferung von Waren, die nicht auf einem langlebigen Datenträger aufgezeichnet sind und die schnell verderben können (Lebensmittel), besteht kein Widerrufsrecht gemäß den gesetzlichen Bestimmungen.</p>
+        <p>Eine Stornierung oder Änderung von Bestellungen ist nach Annahme der Bestellung durch das Restaurant nur mit Zustimmung des Restaurants möglich.</p>
+
+        <h2 class="text-xl font-bold text-white playfair mt-8 mb-3">7. Gewährleistung und Haftung</h2>
+        <p>Für Mängel an gelieferten Waren gelten die gesetzlichen Gewährleistungsbestimmungen. Der Kunde ist verpflichtet, Mängel unverzüglich nach Entdeckung zu rügen.</p>
+        <p>Das Restaurant haftet nicht für Schäden, die auf höhere Gewalt, Streiks, behördliche Massnahmen oder andere ausserhalb seines Einflussbereichs liegende Umstände zurückzuführen sind.</p>
+        <p>Eine weitergehende Haftung des Restaurants, seiner gesetzlichen Vertreter und Erfüllungsgehilfen ist ausgeschlossen, soweit gesetzlich zulässig.</p>
+
+        <h2 class="text-xl font-bold text-white playfair mt-8 mb-3">8. Allergene und Inhaltsstoffe</h>
+        <p>Unsere Speisen können Allergene enthalten (z. B. Gluten, Milch, Eier, Nüsse, Sellerie, Senf, Sesam, Schwefeldioxid, Lupinen, Weichtiere, Fisch, Krebstiere, Soja, Erdnüsse). Kunden mit Allergien oder Unverträglichkeiten werden gebeten, das Personal vor der Bestellung zu informieren.</p>
+        <p>Eine vollständige Allergenliste liegt im Restaurant aus und ist auf Anfrage erhältlich.</p>
+
+        <h2 class="text-xl font-bold text-white playfair mt-8 mb-3">9. Hausrecht und Verhalten im Restaurant</h2>
+        <p>Das Hausrecht liegt beim Restaurantpersonal. Das Personal ist berechtigt, Personen den Zutritt zu verweigern oder aus dem Restaurant zu verweisen, wenn diese den Betrieb stören, andere Gäste belästigen oder gegen die Hausordnung verstossen.</p>
+        <p>Das Mitbringen eigener Speisen und Getränke ist nicht gestattet.</p>
+
+        <h2 class="text-xl font-bold text-white playfair mt-8 mb-3">10. Datenschutz</h2>
+        <p>Die Erhebung und Verarbeitung personenbezogener Daten erfolgt im Einklang mit unserer Datenschutzerklärung, die Sie unter <a href="datenschutz.html" class="text-orange-400 hover:text-orange-300 underline">datenschutz.html</a> einsehen können.</p>
+
+        <h2 class="text-xl font-bold text-white playfair mt-8 mb-3">11. Salvatorische Klausel</h2>
+        <p>Sollten einzelne Bestimmungen dieser AGB unwirksam oder undurchführbar sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt. Anstelle der unwirksamen Bestimmung tritt eine gesetzliche Regelung, sofern eine solche vorhanden ist.</p>
+
+        <h2 class="text-xl font-bold text-white playfair mt-8 mb-3">12. Gerichtsstand und anwendbares Recht</h2>
+        <p>Auf diese AGB und alle Vertragsbeziehungen zwischen dem Kunden und dem Restaurant findet das materielle Recht der Schweiz Anwendung unter Ausschluss des UN-Kaufrechts (CISG).</p>
+        <p>Gerichtsstand für alle Streitigkeiten aus diesem Vertrag ist, soweit gesetzlich zulässig, der Sitz des Restaurants in Arbon, Schweiz.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="border-t border-white/10 bg-black pt-12 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="border-t border-white/10 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+        <p>© 2026 AFH Arbon Food House. Alle Rechte vorbehalten.</p>
+        <p class="flex gap-4">
+          <a href="impressum.html" class="hover:text-orange-400 transition-colors">Impressum</a>
+          <a href="datenschutz.html" class="hover:text-orange-400 transition-colors">Datenschutz</a>
+          <a href="agb.html" class="hover:text-orange-400 transition-colors">AGB</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

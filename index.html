@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AFH Arbon Food House – Frische Burgerspezialitäten & authentische Pizza in Arbon. Jetzt online bestellen." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <title>AFH Arbon Food House | Burger & Pizza in Arbon</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body class="bg-[#0a0a0a] text-white font-sans antialiased selection:bg-orange-500 selection:text-white overflow-x-hidden">
+
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-orange-500 focus:text-white focus:px-4 focus:py-2 focus:rounded focus:font-semibold">Zum Hauptinhalt springen</a>
+
+  <!-- Header / Navbar -->
+  <header class="fixed top-0 left-0 right-0 z-40 border-b border-white/10 bg-black/50 backdrop-blur-md bg-opacity-80 transition-all duration-300" id="header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <!-- Logo -->
+        <div class="flex-shrink-0" aria-label="AFH Arbon Food House Logo">
+          <a href="#" class="block">
+            <img src="logo.png" alt="AFH Arbon Food House" class="h-10 lg:h-12 w-auto drop-shadow-[0_0_20px_rgba(255,107,0,0.4)] transition-transform duration-300 hover:scale-105" loading="lazy">
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-8" aria-label="Hauptnavigation">
+          <a href="#home" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Start</a>
+          <a href="#about" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Über uns</a>
+          <a href="#menu" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Speisekarte</a>
+          <a href="#reviews" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Bewertungen</a>
+          <a href="#contact" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Kontakt</a>
+        </nav>
+
+        <!-- Orange Cart Button (Desktop) -->
+        <div class="hidden md:flex items-center">
+          <a href="https://www.just-eat.ch/speisekarte/arbon-food-house" target="_blank" rel="noopener noreferrer" class="cart-btn group relative inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 rounded-2xl shadow-[0_0_20px_rgba(255,107,0,0.5)] shadow-orange-500/20 all:transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,107,0,0.7)] hover:shadow-orange-500/40 pulse-border cursor-pointer">
+            <svg class="w-6 md:w-7 h-6 md:h-7 text-white group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            <span class="group-hover:block absolute -inset-px bg-gradient-to-r from-orange-400 to-orange-600 rounded-2xl opacity-0 group-hover:opacity-100 blur blur-md transition-opacity duration-300 pointer-events-none"></span>
+            <span class="sr-only">Online bestellen bei Just Eat</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-black/90 backdrop-blur-md border-b border-white/10">
+      <div class="px-4 py-6 space-y-4">
+        <a href="#home" class="block text-lg font-medium text-gray-300 hover:text-white transition-colors px-3 py-2 rounded-lg hover:bg-white/5" data-close-menu>Start</a>
+        <a href="#about" class="block text-lg font-medium text-gray-300 hover:text-white transition-colors px-3 py-2 rounded-lg hover:bg-white/5" data-close-menu>Über uns</a>
+        <a href="#menu" class="block text-lg font-medium text-gray-300 hover:text-white transition-colors px-3 py-2 rounded-lg hover:bg-white/5" data-close-menu>Speisekarte</a>
+        <a href="#reviews" class="block text-lg font-medium text-gray-300 hover:text-white transition-colors px-3 py-2 rounded-lg hover:bg-white/5" data-close-menu>Bewertungen</a>
+        <a href="#contact" class="block text-lg font-medium text-gray-300 hover:text-white transition-colors px-3 py-2 rounded-lg hover:bg-white/5" data-close-menu>Kontakt</a>
+        <a href="https://www.just-eat.ch/speisekarte/arbon-food-house" target="_blank" rel="noopener noreferrer" class="block w-full text-center text-lg font-bold text-white bg-gradient-to-br from-orange-500 to-orange-700 px-6 py-3 rounded-2xl shadow-lg shadow-orange-500/30 hover:from-orange-400 hover:to-orange-600 transition-all transform hover:scale-[1.02]" data-close-menu>Jetzt online bestellen</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+      <!-- Background Image -->
+      <div class="absolute inset-0 z-0">
+        <img src="pizza1.png" alt="Pizza Hintergrund" class="w-full h-full object-cover object-center opacity-60" loading="lazy" aria-hidden="true" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black"></div>
+        <!-- Parallax layer -->
+        <div class="absolute inset-0 bg-[url('burger1.png')] bg-cover bg-center opacity-20 animate-parallax" aria-hidden="true"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center min-h-screen text-center">
+        <div class="space-y-8" data-aos="fade-up" data-aos-duration="800">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-semibold tracking-wider uppercase animate-pulse-slow">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
+            </span>
+            Jetzt geöffnet &mdash; Bestellen Sie online
+          </div>
+
+          <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight tracking-tight playfair mb-6">
+            AFH <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-amber-500">Arbon Food House</span>
+          </h1>
+
+          <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            Frische Burgerspezialitäten, knusprige Pizza &amp; authentischer Döner Kebab in Arbon.<br>
+            Bestellen Sie bequem online oder besuchen Sie uns vor Ort.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://www.just-eat.ch/speisekarte/arbon-food-house" target="_blank" rel="noopener noreferrer"
+               class="hero-cta w-full sm:w-auto px-8 py-4 bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 text-white text-lg font-bold rounded-2xl shadow-[0_0_25px_rgba(255,107,0,0.6)] hover:shadow-[0_0_40px_rgba(255,107,0,0.8)] hover:from-orange-400 hover:to-orange-600 transform hover:-translate-y-1 transition-all duration-300 group">
+              <span class="flex items-center gap-2">
+                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                Jetzt online bestellen
+              </span>
+            </a>
+            <a href="#menu" class="w-full sm:w-auto px-8 py-4 bg-transparent border border-white/20 text-white text-lg font-bold rounded-2xl hover:bg-white/10 hover:border-white/30 transition-all duration-300">
+              Speisekarte ansehen
+            </a>
+          </div>
+
+          <!-- Trust indicators -->
+          <div class="mt-12 flex items-center justify-center gap-6 text-xs md:text-sm text-gray-500 uppercase tracking-widest">
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+              <span>Geöffnet</span>
+            </div>
+            <span class="px-3 py-0.5 rounded bg-white/5 border border-white/10">Lieferung &amp; Abholung</span>
+            <span class="px-3 py-0.5 rounded bg-white/5 border border-white/10">Kostenloses Wi-Fi</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+        <a href="#about" class="flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-colors">
+          <span class="text-xs uppercase tracking-widest font-medium">Nach unten scrollen</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- About / Services Section -->
+    <section id="about" class="py-20 lg:py-32 bg-[#0a0a0a] relative overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,107,0,0.08)_0%_transparent_50%)] pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="600">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 playfair">Willkommen bei AFH Arbon Food House</h2>
+          <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+            Mehr als nur ein Restaurant &mdash; ein Ort für Genuss, Gemeinschaft und gemütliche Momente im Herzen von Arbon.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div class="service-card group p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 hover:border-orange-500/30 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+            <div class="w-14 h-14 bg-orange-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+              <svg class="w-7 h-7 text-orange-500 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Takeaway</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Ihre Lieblingsgerichte zum Mitnehmen &mdash; frisch zubereitet und bereit für den Abholung.</p>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-card group p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 hover:border-orange-500/30 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+            <div class="w-14 h-14 bg-amber-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+              <svg class="w-7 h-7 text-amber-500 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.127-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.127-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Dine-in</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Geniessen Sie Ihre Mahlzeit in unserer casual und gemütlichen Atmosphäre direkt vor Ort.</p>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-card group p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 hover:border-orange-500/30 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+            <div class="w-14 h-14 bg-emerald-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+              <svg class="w-7 h-7 text-emerald-500 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Kostenloses Wi-Fi</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Bleiben Sie vernetzt &mdash; kostenloses Highspeed-WLAN für alle Gäste.</p>
+          </div>
+        </div>
+
+        <!-- Additional services row -->
+        <div class="grid md:grid-cols-4 gap-8 mt-16">
+          <div class="service-item flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center mb-3 text-orange-500">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+            </div>
+            <span class="text-sm font-medium text-white">Bar</span>
+          </div>
+          <div class="service-item flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center mb-3 text-orange-500">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </div>
+            <span class="text-sm font-medium text-white">Reservierungen</span>
+          </div>
+          <div class="service-item flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="300">
+            <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center mb-3 text-orange-500">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+            </div>
+            <span class="text-sm font-medium text-white">Kreditkarten</span>
+          </div>
+          <div class="service-item flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="400">
+            <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center mb-3 text-orange-500">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </div>
+            <span class="text-sm font-medium text-white">Für Alleinreisende</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Speisekarte / Menu Section -->
+    <section id="menu" class="py-20 lg:py-32 bg-[#0f0f0f] relative overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(255,107,0,0.06)_0%_transparent_50%)] pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="600">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 playfair">Speisekarte</h2>
+          <p class="text-lg text-gray-400">Unsere Klassiker &mdash; frisch zubereitet mit Leidenschaft.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Menu Item 1: Classic Smashburger -->
+          <div class="menu-card group relative rounded-3xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-sm hover:border-orange-500/40 transition-all duration-300 cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+            <div class="relative h-64 overflow-hidden">
+              <img src="classicsmashburger.png" alt="Classic Smashburger" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div class="absolute inset-0 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div>
+                  <h3 class="text-xl font-bold text-white mb-1 playfair">Classic Smashburger</h3>
+                  <p class="text-orange-400 text-sm font-medium">CHF 18.50</p>
+                </div>
+              </div>
+              <div class="absolute top-4 right-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg shadow-orange-500/30">Bestseller</div>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-400 text-sm mb-4 line-clamp-2">Saftiges Smash-Beef, geschmolzener Käse, karamellisierte Zwiebeln und unsere hausgemachte AFH-Sauce im brioche Brötchen.</p>
+              <a href="https://www.just-eat.ch/speisekarte/arbon-food-house" target="_blank" rel="noopener noreferrer" class="text-orange-500 text-sm font-semibold hover:text-orange-400 transition-colors inline-flex items-center gap-1">
+                Jetzt bestellen <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Menu Item 2: Crispy Chicken Burger -->
+          <div class="menu-card group relative rounded-3xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-sm hover:border-orange-500/40 transition-all duration-300 cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+            <div class="relative h-64 overflow-hidden">
+              <img src="crispychickenburger.png" alt="Crispy Chicken Burger" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div class="absolute inset-0 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div>
+                  <h3 class="text-xl font-bold text-white mb-1 playfair">Crispy Chicken Burger</h3>
+                  <p class="text-orange-400 text-sm font-medium">CHF 17.50</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-400 text-sm mb-4 line-clamp-2">Knusprig paniertes Hähnchenfilet, frischer Salat, Tomate und würzige Mayo im Toasted Bun.</p>
+              <a href="https://www.just-eat.ch/speisekarte/arbon-food-house" target="_blank" rel="noopener noreferrer" class="text-orange-500 text-sm font-semibold hover:text-orange-400 transition-colors inline-flex items-center gap-1">
+                Jetzt bestellen <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Menu Item 3: Döner Kebab Menü -->
+          <div class="menu-card group relative rounded-3xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-sm hover:border-orange-500/40 transition-all duration-300 cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+            <div class="relative h-64 overflow-hidden">
+              <img src="donerkebabmenu.png" alt="Döner Kebab Menü" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div class="absolute inset-0 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div>
+                  <h3 class="text-xl font-bold text-white mb-1 playfair">Döner Kebab Menü</h3>
+                  <p class="text-orange-400 text-sm font-medium">CHF 16.00</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-400 text-sm mb-4 line-clamp-2">Zartes Dönerfleisch mit frischem Salat, Tomaten, Zwungen und Knoblauch-Joghurt-Sauce im Fladenbrot.</p>
+              <a href="https://www.just-eat.ch/speisekarte/arbon-food-house" target="_blank" rel="noopener noreferrer" class="text-orange-500 text-sm font-semibold hover:text-orange-400 transition-colors inline-flex items-center gap-1">
+                Jetzt bestellen <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Menu Item 4: Pizza -->
+          <div class="menu-card group relative rounded-3xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-sm hover:border-orange-500/40 transition-all duration-300 cursor-pointer" data-aos="fade-up" data-aos-delay="400">
+            <div class="relative h-64 overflow-hidden">
+              <img src="pizza.png" alt="Pizza" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div class="absolute inset-0 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div>
+                  <h3 class="text-xl font-bold text-white mb-1 playfair">Margherita Pizza</h3>
+                  <p class="text-orange-400 text-sm font-medium">CHF 15.50</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-400 text-sm mb-4 line-clamp-2">Klassische italienische Pizza mit Tomatensauce, Mozzarella und frischem Basilikum aus dem Steinofen.</p>
+              <a href="https://www.just-eat.ch/speisekarte/arbon-food-house" target="_blank" rel="noopener noreferrer" class="text-orange-500 text-sm font-semibold hover:text-orange-400 transition-colors inline-flex items-center gap-1">
+                Jetzt bestellen <span>→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-16" data-aos="fade-up" data-aos-delay="500">
+          <a href="https://www.just-eat.ch/speisekarte/arbon-food-house" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-br from-orange-500 to-orange-700 text-white font-bold rounded-2xl shadow-lg shadow-orange-500/40 hover:shadow-orange-500/60 hover:scale-105 transition-all duration-300">
+            Vollständige Speisekarte auf Just Eat <span class="text-lg">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews / Trustpilot-style Section -->
+    <section id="reviews" class="py-20 lg:py-32 bg-[#0a0a0a] relative overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,107,0,0.05)_0%_transparent_50%)] pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="600">
+          <div class="flex items-center justify-center gap-2 mb-4">
+            <img src="https://widget.trustpilot.com/trustpilot-widget/logo.png" alt="Trustpilot" class="h-6" onerror="this.style.display='none'" />
+            <span class="text-orange-500 font-bold text-sm tracking-tighter uppercase">Trustpilot</span>
+          </div>
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 playfair">Was unsere Gäste sagen</h2>
+          <div class="flex items-center justify-center gap-1 text-orange-400 text-xl">
+            ★ ★ ★ ★ ★
+          </div>
+          <p class="text-gray-400 mt-4">Basierend auf 128+ Bewertungen</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Review 1 -->
+          <div class="review-card p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center overflow-hidden border border-orange-500/30">
+                <img src="https://api.dicebear.com/7/svg/avatar/Anna?seed=Anna" alt="Anna" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiM2NjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9IuK1LjgiPkFubmE8L3RleHQ+PC9zdmc+'" />
+              </div>
+              <div>
+                <h4 class="text-base font-bold text-white">Anna M.</h4>
+                <p class="text-xs text-gray-500">Arbon · Verifizierter Gast</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-1 text-orange-400 text-lg mb-4">★ ★ ★ ★ ★</div>
+            <p class="text-gray-300 italic text-sm leading-relaxed">"Das beste Essen in Arbon! Der Smashburger ist einfach unschlagbar und der Service stets freundlich."</p>
+            <p class="text-xs text-gray-500 mt-4">• Freitagabend · Dine-in</p>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="review-card p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm" data-aos="fade-up" data-aos-delay="200">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center overflow-hidden border border-amber-500/30">
+                <img src="https://api.dicebear.com/7/svg/avatar/Marcus?seed=Marcus" alt="Marcus" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiM2NjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9IuK1LjgiPU1hcmN1czwvdGV4dD48L3N2Zz+'" />
+              </div>
+              <div>
+                <h4 class="text-base font-bold text-white">Marcus T.</h4>
+                <p class="text-xs text-gray-500">Arbon · Verifizierter Gast</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-1 text-orange-400 text-lg mb-4">★ ★ ★ ★ ★</div>
+            <p class="text-gray-300 italic text-sm leading-relaxed">"Sehr freundliches Personal und gemütliche Atmosphäre. Die Pizza schmeckt wie in Italien. Immer wieder gerne!"</p>
+            <p class="text-xs text-gray-500 mt-4">• Samstag · Takeaway</p>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm" data-aos="fade-up" data-aos-delay="300">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center overflow-hidden border border-emerald-500/30">
+                <img src="https://api.dicebear.com/7/svg/avatar/Sophie?seed=Sophie" alt="Sophie" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiM2NjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9IuK1LjgiPlNvcGhpZTwvdGV4dD48L3N2Zz+'" />
+              </div>
+              <div>
+                <h4 class="text-base font-bold text-white">Sophie L.</h4>
+                <p class="text-xs text-gray-500">St. Gallen · Verifizierter Gast</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-1 text-orange-400 text-lg mb-4">★ ★ ★ ★ ★</div>
+            <p class="text-gray-300 italic text-sm leading-relaxed">"Hervorragender Döner Kebab und kostenloses Wi-Fi. Perfekt für ein entspanntes Essen allein oder mit Freunden."</p>
+            <p class="text-xs text-gray-500 mt-4">• Sonntag · Dine-in</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Info Section -->
+    <section id="contact" class="py-20 lg:py-32 bg-[#0f0f0f] relative overflow-hidden">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up" data-aos-duration="600">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-8 playfair">Kontakt & Standort</h2>
+
+        <div class="grid md:grid-cols-2 gap-12 mb-16">
+          <div class="text-left">
+            <h3 class="text-xl font-bold text-white mb-6">AFH Arbon Food House</h3>
+            <p class="text-gray-400 text-lg mb-4 flex items-start gap-3">
+              <svg class="w-5 h-5 flex-shrink-0 text-orange-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+              St. Gallerstrasse 16<br>9320 Arbon, Schweiz
+            </p>
+            <p class="text-gray-400 text-lg mb-4 flex items-start gap-3">
+              <svg class="w-5 h-5 flex-shrink-0 text-orange-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.2a2 2 0 012 2v10.698a2 2 0 01-1.11 1.789l-1.128 1.416a2 2 0 01-2.582 0l-1.128-1.416A2 2 0 015 15.698V5z" /></svg>
+              <a href="tel:+41783517129" class="text-orange-400 hover:text-orange-300 transition-colors">078 351 71 29</a>
+            </p>
+            <p class="text-gray-400 text-lg mb-4 flex items-start gap-3">
+              <svg class="w-5 h-5 flex-shrink-0 text-orange-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <a href="https://www.just-eat.ch/speisekarte/arbon-food-house" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:text-orange-300 transition-colors">Online bestellen</a>
+            </p>
+          </div>
+
+          <div class="space-y-4">
+            <div class="flex items-start gap-3 text-left">
+              <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 text-orange-500">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+              </div>
+              <div>
+                <p class="text-white font-semibold">Öffnungszeiten</p>
+                <p class="text-sm text-gray-400">Freitag &amp; Samstag: 10:30–00:00</p>
+                <p class="text-sm text-gray-400">Sonntag bis Donnerstag: 10:30–22:30</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 text-left">
+              <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 text-emerald-500">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+              </div>
+              <div>
+                <p class="text-white font-semibold">Services</p>
+                <p class="text-sm text-gray-400">Takeaway · Dine-in · Wi-Fi · Bar · Reservierungen · Kreditkarten</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-sm">
+          <p class="text-lg text-gray-300 mb-6">Haben Sie Fragen oder möchten Sie einen Tisch reservieren?</p>
+          <a href="tel:+41783517129" class="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-br from-orange-500 to-orange-700 text-white font-bold rounded-2xl shadow-lg shadow-orange-500/40 hover:shadow-orange-500/60 hover:scale-105 transition-all duration-300">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.2a2 2 0 012 2v10.698a2 2 0 01-1.11 1.789l-1.128 1.416a2 2 0 01-2.582 0l-1.128-1.416A2 2 0 015 15.698V5z" /></svg>
+            Jetzt anrufen: 078 351 71 29
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 bg-black pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-12 mb-12">
+        <div class="col-span-1 md:col-span-2">
+          <img src="logo.png" alt="AFH Arbon Food House" class="h-10 w-auto mb-6 drop-shadow-[0_0_15px_rgba(255,107,0,0.3)]" loading="lazy">
+          <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
+            AFH Arbon Food House &mdash; frische Burgerspezialitäten, Pizza &amp; Döner Kebab in Arbon. Qualität, die man schmeckt.
+          </p>
+          <div class="mt-6 flex gap-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all" aria-label="Instagram">
+              <svg class="w-5 h-5 text-gray-400 hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h5.5M16 4h5.5M4 16h5.5M16 16h5.5M8 12a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all" aria-label="Facebook">
+              <svg class="w-5 h-5 text-gray-400 hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-6">Schnellzugriff</h4>
+          <ul class="space-y-3">
+            <li><a href="#menu" class="text-gray-400 text-sm hover:text-orange-400 transition-colors">Speisekarte</a></li>
+            <li><a href="#about" class="text-gray-400 text-sm hover:text-orange-400 transition-colors">Über uns</a></li>
+            <li><a href="#reviews" class="text-gray-400 text-sm hover:text-orange-400 transition-colors">Bewertungen</a></li>
+            <li><a href="#contact" class="text-gray-400 text-sm hover:text-orange-400 transition-colors">Kontakt</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-6">Rechtliches</h4>
+          <ul class="space-y-3">
+            <li><a href="impressum.html" class="text-gray-400 text-sm hover:text-orange-400 transition-colors">Impressum</a></li>
+            <li><a href="datenschutz.html" class="text-gray-400 text-sm hover:text-orange-400 transition-colors">Datenschutzerklärung</a></li>
+            <li><a href="agb.html" class="text-gray-400 text-sm hover:text-orange-400 transition-colors">AGB</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-6">Online bestellen</h4>
+          <a href="https://www.just-eat.ch/speisekarte/arbon-food-house" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-orange-400 text-sm font-semibold hover:text-orange-300 transition-colors">
+            Just Eat Speisekarte <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+        <p>© 2026 AFH Arbon Food House. Alle Rechte vorbehalten.</p>
+        <p class="flex gap-4">
+          <a href="impressum.html" class="hover:text-orange-400 transition-colors">Impressum</a>
+          <a href="datenschutz.html" class="hover:text-orange-400 transition-colors">Datenschutz</a>
+          <a href="agb.html" class="hover:text-orange-400 transition-colors">AGB</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
