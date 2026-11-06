@@ -1,81 +1,128 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Datenschutzerklärung – AFH Arbon Food House. Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO und Schweizer Datenschutzgesetz." />
   <title>Datenschutzerklärung | AFH Arbon Food House</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              500: '#ff6b00',
+              600: '#e55a00',
+              400: '#ff9f43',
+            },
+            dark: {
+              900: '#0a0a0a',
+              800: '#121212',
+              700: '#1a1a1a',
+            }
+          },
+          fontFamily: {
+            display: ['"Clash Display"', 'system-ui', 'sans-serif'],
+            body: ['"Outfit"', 'system-ui', 'sans-serif'],
+            mono: ['"Space Grotesk"', 'monospace'],
+          },
+          borderRadius: {
+            'xl': '1rem',
+            '2xl': '1.5rem',
+            '3xl': '2rem',
+          },
+          boxShadow: {
+            'glow': '0 0 40px rgba(255, 107, 0, 0.35)',
+          }
+        }
+      }
+    }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/png" href="logo.png">
-</head>
-<body class="bg-[#0a0a0a] text-white font-sans antialiased selection:bg-orange-500 selection:text-white overflow-x-hidden">
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700;800&family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 z-40 border-b border-white/10 bg-black/50 backdrop-blur-md bg-opacity-80 transition-all duration-300" id="header">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🔥%3C/text%3E%3C/svg%3E">
+</head>
+<body class="bg-dark-900 text-white font-body antialiased overflow-x-hidden">
+
+  <!-- Custom Cursor -->
+  <div id="cursor" class="fixed w-6 h-6 rounded-full border border-brand-500/30 bg-brand-500/10 pointer-events-none z-50 mix-blend-difference transition-transform duration-200"></div>
+  <div id="cursor-follower" class="fixed w-12 h-12 rounded-full border border-brand-500/20 pointer-events-none z-49 mix-blend-difference transition-transform duration-700 ease-out"></div>
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-dark-900/80 backdrop-blur-xl bg-opacity-90 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 lg:h-20">
-        <div class="flex-shrink-0">
-          <a href="index.html" class="block">
-            <img src="logo.png" alt="AFH Arbon Food House" class="h-10 lg:h-12 w-auto drop-shadow-[0_0_20px_rgba(255,107,0,0.4)]" loading="lazy">
-          </a>
+        <a href="index.html" class="logo group flex items-center gap-2 cursor-pointer">
+          <span class="text-2xl lg:text-3xl font-display font-800 tracking-tighter text-white">AFH.</span>
+          <span class="text-xs lg:text-sm font-display font-400 tracking-widest text-gray-400 uppercase opacity-80 group-hover:opacity-100 transition-opacity">arbon food house</span>
+        </a>
+
+        <div class="hidden lg:flex items-center gap-8 lg:gap-12">
+          <a href="index.html#home" class="nav-link font-medium text-sm uppercase tracking-wider text-gray-300 hover:text-brand-400 transition-colors"><span class="relative">Start</span></a>
+          <a href="index.html#about" class="nav-link font-medium text-sm uppercase tracking-wider text-gray-300 hover:text-brand-400 transition-colors"><span class="relative">Über uns</span></a>
+          <a href="index.html#menu" class="nav-link font-medium text-sm uppercase tracking-wider text-gray-300 hover:text-brand-400 transition-colors"><span class="relative">Speisekarte</span></a>
+          <a href="index.html#reviews" class="nav-link font-medium text-sm uppercase tracking-wider text-gray-300 hover:text-brand-400 transition-colors"><span class="relative">Bewertungen</span></a>
+          <a href="index.html#contact" class="nav-link font-medium text-sm uppercase tracking-wider text-gray-300 hover:text-brand-400 transition-colors"><span class="relative">Kontakt</span></a>
         </div>
-        <nav class="hidden md:flex items-center space-x-8" aria-label="Hauptnavigation">
-          <a href="index.html#home" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Start</a>
-          <a href="index.html#about" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Über uns</a>
-          <a href="index.html#menu" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Speisekarte</a>
-          <a href="index.html#reviews" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Bewertungen</a>
-          <a href="index.html#contact" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Kontakt</a>
-        </nav>
-        <div class="hidden md:flex items-center">
-          <a href="https://www.just-eat.ch/speisekarte/arbon-food-house" target="_blank" rel="noopener noreferrer" class="cart-btn group relative inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 rounded-2xl shadow-[0_0_20px_rgba(255,107,0,0.5)] shadow-orange-500/20 all:transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,107,0,0.7)] hover:shadow-orange-500/40 pulse-border cursor-pointer">
-            <svg class="w-6 md:w-7 h-6 md:h-7 text-white group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
-            <span class="group-hover:block absolute -inset-px bg-gradient-to-r from-orange-400 to-orange-600 rounded-2xl opacity-0 group-hover:opacity-100 blur blur-md transition-opacity duration-300 pointer-events-none"></span>
-            <span class="sr-only">Online bestellen bei Just Eat</span>
-          </a>
-        </div>
-        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+
+        <a href="https://www.just-eat.ch/speisekarte/arbon-food-house" target="_blank" rel="noopener noreferrer" class="cart-btn group relative inline-flex items-center justify-center w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-brand-500 via-brand-600 to-brand-900 rounded-2xl shadow-glow hover:shadow-glow-hover hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+          <svg class="w-6 lg:w-7 h-6 lg:h-7 text-white group-hover:translate-x-0.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+          <span class="sr-only">Online bestellen bei Just Eat</span>
+        </a>
+
+        <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-xl text-gray-300 hover:text-white hover:bg-white/5 transition-colors">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </div>
     </div>
-    <div id="mobile-menu" class="md:hidden hidden bg-black/90 backdrop-blur-md border-b border-white/10">
-      <div class="px-4 py-6 space-y-4">
-        <a href="index.html#home" class="block text-lg font-medium text-gray-300 hover:text-white transition-colors px-3 py-2 rounded-lg hover:bg-white/5" data-close-menu>Start</a>
-        <a href="index.html#about" class="block text-lg font-medium text-gray-300 hover:text-white transition-colors px-3 py-2 rounded-lg hover:bg-white/5" data-close-menu>Über uns</a>
-        <a href="index.html#menu" class="block text-lg font-medium text-gray-300 hover:text-white transition-colors px-3 py-2 rounded-lg hover:bg-white/5" data-close-menu>Speisekarte</a>
-        <a href="index.html#reviews" class="block text-lg font-medium text-gray-300 hover:text-white transition-colors px-3 py-2 rounded-lg hover:bg-white/5" data-close-menu>Bewertungen</a>
-        <a href="index.html#contact" class="block text-lg font-medium text-gray-300 hover:text-white transition-colors px-3 py-2 rounded-lg hover:bg-white/5" data-close-menu>Kontakt</a>
-        <a href="https://www.just-eat.ch/speisekarte/arbon-food-house" target="_blank" rel="noopener noreferrer" class="block w-full text-center text-lg font-bold text-white bg-gradient-to-br from-orange-500 to-orange-700 px-6 py-3 rounded-2xl shadow-lg shadow-orange-500/30 hover:from-orange-400 hover:to-orange-600 transition-all transform hover:scale-[1.02]" data-close-menu>Jetzt online bestellen</a>
+
+    <div id="mobileMenu" class="lg:hidden hidden bg-dark-900/95 backdrop-blur-xl border-b border-white/5 p-6">
+      <div class="flex flex-col gap-4">
+        <a href="index.html#home" class="mobile-nav-link py-3 font-medium text-lg uppercase tracking-wider text-white hover:text-brand-400 transition-colors">Start</a>
+        <a href="index.html#about" class="mobile-nav-link py-3 font-medium text-lg uppercase tracking-wider text-white hover:text-brand-400 transition-colors">Über uns</a>
+        <a href="index.html#menu" class="mobile-nav-link py-3 font-medium text-lg uppercase tracking-wider text-white hover:text-brand-400 transition-colors">Speisekarte</a>
+        <a href="index.html#reviews" class="mobile-nav-link py-3 font-medium text-lg uppercase tracking-wider text-white hover:text-brand-400 transition-colors">Bewertungen</a>
+        <a href="index.html#contact" class="mobile-nav-link py-3 font-medium text-lg uppercase tracking-wider text-white hover:text-brand-400 transition-colors">Kontakt</a>
+        <a href="https://www.just-eat.ch/speisekarte/arbon-food-house" target="_blank" rel="noopener noreferrer" class="mt-4 py-4 text-center font-bold text-white bg-gradient-to-r from-brand-500 to-brand-600 rounded-2xl shadow-glow hover:shadow-glow-hover transition-all transform hover:scale-[1.02]">Jetzt online bestellen</a>
       </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="relative py-16 lg:py-24 text-center">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_rgba(0,0,0,0.9)_100%)] z-0"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-8">
+      <h1 class="text-4xl lg:text-6xl font-display font-800 tracking-tighter text-white mb-4">Datenschutzerklärung</h1>
+      <p class="text-lg text-gray-400 font-light">Schutz Ihrer personenbezogenen Daten</p>
     </div>
   </header>
 
-  <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 mb-12">
-    <article class="glass-strong rounded-3xl p-8 md:p-12 border border-white/10">
-      <header class="mb-8">
-        <h1 class="text-3xl md:text-4xl font-bold text-white mb-3 playfair">Datenschutzerklärung</h1>
-        <p class="text-gray-400 text-sm">Stand: November 2026</p>
-      </header>
+  <!-- Content -->
+  <main class="max-w-2xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
+    <article class="glass-strong rounded-3xl p-8 lg:p-12 border border-white/10">
+      <section class="space-y-8 text-sm md:text-base leading-relaxed text-gray-300">
+        <p class="text-white font-semibold">Wir freuen uns über Ihren Besuch auf unserer Website und über Ihr Interesse an unserem Unternehmen. Der Schutz Ihrer personenbezogenen Daten ist uns ein besonderes Anliegen. Nachstehend informieren wir Sie über die Erhebung, Verarbeitung und Nutzung personenbezogener Daten bei Nutzung unserer Website.</p>
 
-      <section class="space-y-6 text-sm md:text-base leading-relaxed text-gray-300">
-        <p class="text-white font-semibold mb-4">Wir freuen uns über Ihren Besuch auf unserer Website und über Ihr Interesse an unserem Unternehmen. Der Schutz Ihrer personenbezogenen Daten ist uns sehr wichtig. Nachstehend informieren wir Sie über die Erhebung, Verarbeitung und Nutzung personenbezogener Daten bei Nutzung unserer Website.</p>
-
-        <h2 class="text-xl font-bold text-white playfair mt-8 mb-3">1. Verantwortliche Stelle</h2>
+        <h2 class="text-xl font-display font-700 text-white mt-8">1. Verantwortliche Stelle</h2>
         <p>Verantwortliche Stelle im Sinne der Datenschutzgesetze, insbesondere der EU-Datenschutz-Grundverordnung (DSGVO) und des Schweizerischen Datenschutzgesetzes (DSG):</p>
-        <p><strong class="text-white">AFH Arbon Food House</strong><br>St. Gallerstrasse 16<br>9320 Arbon<br>Schweiz<br>E-Mail: info@afh-arbon.ch</p>
+        <p class="text-white font-semibold"><strong>AFH Arbon Food House</strong><br>St. Gallerstrasse 16<br>9320 Arbon<br>Schweiz</p>
+        <p>E-Mail: <a href="mailto:info@afh-arbon.ch" class="text-brand-400 hover:text-brand-300 transition-colors">info@afh-arbon.ch</a></p>
 
-        <h2 class="text-xl font-bold text-white playfair mt-8 mb-3">2. Erhebung und Verarbeitung personenbezogener Daten</h2>
+        <h2 class="text-xl font-display font-700 text-white mt-8">2. Erhebung und Verarbeitung personenbezogener Daten</h2>
         <p>Personenbezogene Daten sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen.</p>
-        <p>Bei der rein informatorischen Nutzung unserer Website, also wenn Sie uns nicht übermitteln, erheben wir nur die personenbezogenen Daten, die Ihr Browser an unseren Server übermittelt. Dies sind:</p>
-        <ul class="list-disc list-inside space-y-1 ml-4">
+        <p>Bei der rein informatorischen Nutzung unserer Website, also wenn Sie uns keine Daten übermitteln, erheben wir nur die personenbezogenen Daten, die Ihr Browser an unseren Server übermittelt. Dies sind:</p>
+        <ul class="list-disc list-inside space-y-1 ml-4 text-gray-300">
           <li>IP-Adresse</li>
           <li>Datum und Uhrzeit der Anfrage</li>
           <li>Zeitzonendifferenz zur Greenwich Mean Time (GMT)</li>
@@ -89,33 +136,33 @@
         </ul>
         <p>Diese Daten werden temporär in einem sog. Logfile gespeichert, aber nicht zusammen mit anderen Daten von Ihnen gespeichert. Eine Auswertung dieser Daten zu Marketingzwecken findet in diesem Zusammenhang nicht statt.</p>
 
-        <h2 class="text-xl font-bold text-white playfair mt-8 mb-3">3. Rechtsgrundlage für die Datenverarbeitung</h2>
+        <h2 class="text-xl font-display font-700 text-white mt-8">3. Rechtsgrundlage für die Datenverarbeitung</h2>
         <p>Soweit wir Ihre Einwilligung für die Verarbeitung personenbezogener Daten einholen, ist Art. 6 Abs. 1 lit. a DSGVO bzw. Art. 4 Abs. 1 lit. a DSG die Rechtsgrundlage.</p>
         <p>Bei der Verarbeitung personenbezogener Daten, die zur Erfüllung eines Vertrags erforderlich sind, dient Art. 6 Abs. 1 lit. b DSGVO als Rechtsgrundlage.</p>
         <p>Unterliegt unser Unternehmen einer rechtlichen Verpflichtung, durch die eine Verarbeitung von personenbezogenen Daten erforderlich wird, so dient Art. 6 Abs. 1 lit. c DSGVO als Grundlage.</p>
         <p>Für den Fall, dass lebenswichtige Interessen der betroffenen Person oder einer anderen natürlichen Person eine Verarbeitung personenbezogener Daten erforderlich machen, dient Art. 6 Abs. 1 lit. d DSGVO als Rechtsgrundlage.</p>
         <p>Ist die Verarbeitung zur Wahrung eines berechtigten Interesses unseres Unternehmens oder eines Dritten erforderlich und überwiegen die Interessen, Grundrechte und Freiheiten des Betroffenen das erstgenannte Interesse nicht, so dient Art. 6 Abs. 1 lit. f DSGVO als Rechtsgrundlage für die Verarbeitung.</p>
 
-        <h2 class="text-xl font-bold text-white playfair mt-8 mb-3">4. Löschung von Daten und Speicherdauer</h2>
+        <h2 class="text-xl font-display font-700 text-white mt-8">4. Löschung von Daten und Speicherdauer</h2>
         <p>Die personenbezogenen Daten der betroffenen Person werden gelöscht oder gesperrt, sobald der Zweck der Speicherung entfällt. Eine Speicherung kann darüber hinaus erfolgen, wenn dies durch den europäischen oder schweizerischen Gesetzgeber vorgeschrieben wurde. Eine Sperrung oder Löschung erfolgt auch dann, wenn eine von uns gewährte Speicherfrist abläuft, es sei denn, eine Erforderlichkeit der weiteren Aufbewahrung der Daten für einen Vertragsabschluss oder -erfüllung besteht.</p>
 
-        <h2 class="text-xl font-bold text-white playfair mt-8 mb-3">5. Cookies</h2>
+        <h2 class="text-xl font-display font-700 text-white mt-8">5. Cookies</h2>
         <p>Unsere Website verwendet Cookies. Cookies sind Textdateien, welche über einen Internetbrowser auf einem Computersystem abgelegt und gespeichert werden.</p>
         <p>Durch den Einsatz von Cookies kann uns die Website nutzerfreundlicher gestalten. Einige Funktionen unserer Internetseite können ohne den Einsatz von Cookies nicht angeboten werden. Für diese ist es erforderlich, dass der Browser auch nach einem Seitenwechsel wiedererkannt wird.</p>
         <p>Sie können die Setzung von Cookies durch unsere Website jederzeit mittels einer entsprechenden Einstellung des genutzten Internetbrowsers verhindern und damit der Setzung von Cookies dauerhaft widersprechen. Zudem können bereits gesetzte Cookies jederzeit über einen Internetbrowser oder andere Softwareprogramme gelöscht werden.</p>
         <p>Wird die Deaktivierung von Cookies in dem genutzten Internetbrowser vorgenommen, sind unter Umständen nicht alle Funktionen unserer Website vollumfänglich nutzbar.</p>
 
-        <h2 class="text-xl font-bold text-white playfair mt-8 mb-3">6. Kontaktformular und E-Mail-Kontakt</h2>
+        <h2 class="text-xl font-display font-700 text-white mt-8">6. Kontaktformular und E-Mail-Kontakt</h2>
         <p>Nehmen Sie über das auf der Website bereitgestellte Kontaktformular oder per E-Mail Kontakt mit uns auf, so werden die von Ihnen übermittelten Daten zur Bearbeitung der Anfrage sowie für den Fall von Anschlussfragen gespeichert.</p>
         <p>Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
         <p>Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (vertragliche oder vorvertragliche Massnahmen) sowie auf Basis Ihres Einverständnisses (Art. 6 Abs. 1 lit. a DSGVO).</p>
 
-        <h2 class="text-xl font-bold text-white playfair mt-8 mb-3">7. Analyse-Tools und Werbung</h2>
+        <h2 class="text-xl font-display font-700 text-white mt-8">7. Analyse-Tools und Werbung</h2>
         <p>Unsere Website nutzt derzeit keine Analysetools von Drittanbietern (z. B. Google Analytics) und schaltet keine Werbe-Cookies, sofern Sie nicht ausdrücklich eingewilligt haben.</p>
 
-        <h2 class="text-xl font-bold text-white playfair mt-8 mb-3">8. Ihre Rechte als betroffene Person</h2>
+        <h2 class="text-xl font-display font-700 text-white mt-8">8. Ihre Rechte als betroffene Person</h2>
         <p>Sie haben das Recht:</p>
-        <ul class="list-disc list-inside space-y-1 ml-4">
+        <ul class="list-disc list-inside space-y-1 ml-4 text-gray-300">
           <li>auf Auskunft über Ihre von uns verarbeiteten personenbezogenen Daten (Art. 15 DSGVO),</li>
           <li>auf Berichtigung oder Löschung Ihrer Daten (Art. 16 bzw. 17 DSGVO),</li>
           <li>auf Einschränkung der Verarbeitung (Art. 18 DSGVO),</li>
@@ -123,26 +170,27 @@
           <li>der Verarbeitung zu widersprechen (Art. 21 DSGVO),</li>
           <li>sich bei einer Aufsichtsbehörde zu beschweren (Art. 77 DSGVO).</li>
         </ul>
-        <p>Für die Ausübung Ihrer Rechte wenden Sie sich bitte an die unter Ziffer 1 genannte Verantwortliche Stelle.</p>
+        <p>Für die Ausübung Ihrer Rechte wenden Sie sich bitte an die unter Ziffer 1 genannte verantwortliche Stelle.</p>
 
-        <h2 class="text-xl font-bold text-white playfair mt-8 mb-3">9. Datensicherheit</h>
+        <h2 class="text-xl font-display font-700 text-white mt-8">9. Datensicherheit</h2>
         <p>Wir bedienen uns geeigneter technischer und organisatorischer Sicherheitsmassnahmen, um Ihre personenbezogenen Daten vor zufälligen oder vorsätzlichen Manipulationen, teilweisem oder vollständigem Verlust, Zerstörung oder vor dem unbefugten Zugriff Dritter zu schützen. Unsere Sicherheitsmassnahmen werden im Zuge der technologischen Entwicklung fortlaufend verbessert.</p>
 
-        <h2 class="text-xl font-bold text-white playfair mt-8 mb-3">10. Aktualität und Änderung dieser Datenschutzerklärung</h2>
+        <h2 class="text-xl font-display font-700 text-white mt-8">10. Aktualität und Änderung dieser Datenschutzerklärung</h2>
         <p>Diese Datenschutzerklärung ist aktuell gültig und hat den Stand November 2026. Durch die Weiterentwicklung unserer Website und Angebote oder aufgrund geänderter gesetzlicher oder behördlicher Vorschriften kann es notwendig werden, diese Datenschutzerklärung zu ändern. Die aktuelle Datenschutzerklärung kann jederzeit auf der Website eingesehen und ausgedruckt werden.</p>
       </section>
     </article>
   </main>
 
-  <footer class="border-t border-white/10 bg-black pt-12 pb-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="border-t border-white/10 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-        <p>© 2026 AFH Arbon Food House. Alle Rechte vorbehalten.</p>
-        <p class="flex gap-4">
-          <a href="impressum.html" class="hover:text-orange-400 transition-colors">Impressum</a>
-          <a href="datenschutz.html" class="hover:text-orange-400 transition-colors">Datenschutz</a>
-          <a href="agb.html" class="hover:text-orange-400 transition-colors">AGB</a>
-        </p>
+  <!-- Footer -->
+  <footer class="border-t border-white/5 bg-dark-900 py-12 lg:py-16">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="border-t border-white/10 pt-8 mt-12 flex flex-col lg:flex-row justify-between items-center gap-6">
+        <p class="text-gray-500 text-xs font-mono tracking-widest">© 2026 AFH Arbon Food House. Alle Rechte vorbehalten.</p>
+        <div class="flex gap-6">
+          <a href="impressum.html" class="text-gray-400 hover:text-brand-400 transition-colors text-xs font-mono uppercase tracking-widest">Impressum</a>
+          <a href="datenschutz.html" class="text-gray-400 hover:text-brand-400 transition-colors text-xs font-mono uppercase tracking-widest">Datenschutz</a>
+          <a href="agb.html" class="text-gray-400 hover:text-brand-400 transition-colors text-xs font-mono uppercase tracking-widest">AGB</a>
+        </div>
       </div>
     </div>
   </footer>
